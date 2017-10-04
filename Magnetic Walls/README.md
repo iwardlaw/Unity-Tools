@@ -6,7 +6,7 @@ As with the other Unity tools I've posted here, the `Assets` directory contains 
 
 This scene contains a simple, partially enclosed room. The player can walk on the blue "magnetic" walls and ceiling by approaching and facing them and then pressing the space bar. Press R to return to the spawn point in an upright orientation. (The scene currently contains elements intended for HTC Vive support, but I was never able to implement this support fully. The way in which the Vive determines the player's position is incompatible with what I have programmed, as I initially developed this system for regular keyboard controls.)
 
-![Demonstration of magnetic walls. The player is walking upside-down on the ceiling.](../Images/MagneticWalls-01.jpg)
+![Demonstration of magnetic walls. The player is walking upside-down on the ceiling.](Images/MagneticWalls-01.jpg)
 
 * * *
 

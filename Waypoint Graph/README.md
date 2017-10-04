@@ -6,7 +6,7 @@ As with the other Unity tools I've posted here, the `Assets` directory contains 
 
 This scene contains two different spiders (both available free on the Asset Store) that move around on a small graph (five waypoints connected by eight links). The brown spider moves on a set path (0, 1, 2, 3, 4, 0, 5, repeat) and generates different audio clips depending on whether it's walking or stationary. The green spider moves about randomly and has had its `AudioSource` muted (because both spiders grumbling at once was too annoying). Note how they will not collide with each other; rather, the set-path brown spider waits for the green one to move if necessary, while the randomly moving green one never tries to move to a waypoint that the brown one either occupies or is headed toward.
 
-![Waypoint graph demonstration. Two spiders move among the graph's points by following links.](../Images/WaypointGraph-01.jpg)
+![Waypoint graph demonstration. Two spiders move among the graph's points by following links.](Images/WaypointGraph-01.jpg)
 
 If you start a project from scratch, be sure to include all of the scripts: `AbstractGizmo`, `AbstractGizmoEditor`, `GraphGizmo`, `GraphTraverse`, `LinkGizmo`, `Pair`, `RAList`, `Vector3Eq`, `Waypoint`, `WaypointGraph`, and `WaypointLink`. `Vector3Eq` is a wrapper for `Vector3` that implements `IEquatable`, which was necessary to get it work in a `RAList` (random-access list); regarding this latter class, I built it to compensate for some flaw I perceived in the standard `List`, but I cannot remember what that was, and it may be entirely unnecessary. It is possible that I will replace `RAList`s with `List`s in the future, but for now, things are working fine.
 
