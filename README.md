@@ -6,7 +6,7 @@ This repository houses various tools I've created for use in Unity.
 
 - The **Waypoint Graph** tool facilitates object movement among a set of user-defined points.
 
-- The **Worldspace Textbox** tool delivers text-based interactions in world space instead of screen space. Necessary for using te    xtboxes in head-mounted-display-based virtual reality.
+- The **Worldspace Textbox** tool delivers text-based interactions in world space instead of screen space. Necessary for using textboxes in head-mounted-display-based virtual reality.
 
 
 * * *
