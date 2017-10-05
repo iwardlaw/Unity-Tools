@@ -24,7 +24,7 @@ public class ActivateText : MonoBehaviour {
     public float rotateSpeed = 150f;
     public bool returnToOriginalFacing = true;
     public bool finalPose = false;
-	  public bool overrideDefaultAnimation = true;
+    public bool overrideDefaultAnimation = true;
     public string conditionName;
     int _conditionHash;
     public int conditionHash {get {return _conditionHash;} }

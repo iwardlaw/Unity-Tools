@@ -279,7 +279,6 @@ public class TextboxManager : MonoBehaviour {
 
   void LoadText(TextAsset newText, Text newTextbox, GameObject newPanel, Animator newAnimator, int dfltAnimHash, AudioSource newAudioSource, int currLn, int endLn, string lineSep, string sublineSep)
   {
-    //Debug.Log("asdf");
     if(newText != null && !textboxActive) {
       textbox = newTextbox;
       textboxPanel = newPanel;
