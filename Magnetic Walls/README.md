@@ -1,8 +1,10 @@
 ## Magnetic Walls ##
 
+###### _Last checked with Unity 5.5.4p3_ ######
+
 This system for magnetic walls allows Unity `GameObject`s to be affected by alternate sources of gravity. In fact, it is not limited to orthogonal walls but rather can be applied to any surfaces you desire. It was heavily influenced by Sebastian League's [tutorial video on faux gravity](https://www.youtube.com/watch?v=gHeQ8Hr92P4); I expanded it to apply to multiple surfaces. It was originally created for use in _Fred's Happy Factory_, a team-based course project for Virtual Reality at the University of Arkansas at Little Rock in fall 2016, but it is meant to be generally applicable.
 
-As with the other Unity tools I've posted here, the `Assets` directory contains all of the assets that will be loaded if you import `MagneticWalls01-Assets.unitypackage` into a Unity project; this includes the sample scene "WaypointGraph01", in `Assets/Scenes/`.
+As with the other Unity tools I've posted here, the `Assets` directory contains all of the assets that will be loaded if you import `MagneticWalls01-Assets.unitypackage` into a Unity project; this includes the sample scene "MagneticWalls01", in `Assets/Scenes/`.
 
 This scene contains a simple, partially enclosed room. The player can walk on the blue "magnetic" walls and ceiling by approaching and facing them and then pressing the space bar. Press R to return to the spawn point in an upright orientation. (The scene currently contains elements intended for HTC Vive support, but I was never able to implement this support fully. The way in which the Vive determines the player's position is incompatible with what I have programmed, as I initially developed this system for regular keyboard controls.)
 
@@ -20,7 +22,7 @@ This scene contains a simple, partially enclosed room. The player can walk on th
 
 4. Add the `InputMaster` script as a component to some object in the scene. I usually make a "ScriptMaster" to hold scripts that do not belong to any particular game object. At the very least, ensure that `Using Keyboard Input` is checked. Add the left and right Vive controllers for `Vir Left` and `Vir Right`, respectively.
 
-5. Add your player in the style of the `PlayerUnit` prefab, an empty player unit, parent of the actual player object, parent of the Vive camera rig.
+5. Add your player in the style of the `PlayerUnit` prefab, an empty player unit, parent of the actual player object, itself parent of the Vive camera rig.
 
 6. Go back to the Vive Camera Rig. In the `Vive Camera Rig Controller` component, add the player object as `Player`, the object holding `InputMaster` as `Script Master`, and the Rig's own "Camera (head)" child as `Camera Head`.
 

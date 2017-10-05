@@ -1,6 +1,8 @@
 ## Waypoint Graph ##
 
-This waypoint graph exists to facilitate the movement of `GameObject`s in Unity among sets of points in generally unobstructed straight lines. It was created for use in _Fred's Happy Factory_, a team-based course project for Virtual Reality at the University of Arkansas at Little Rock in fall 2016, but it is meant to be generally applicable.
+###### _Last checked with Unity 5.5.4p3_ ######
+
+This waypoint graph system exists to facilitate the movement of `GameObject`s in Unity among sets of points in generally unobstructed straight lines. It was created for use in _Fred's Happy Factory_, a team-based course project for Virtual Reality at the University of Arkansas at Little Rock in fall 2016, but it is meant to be generally applicable.
 
 As with the other Unity tools I've posted here, the `Assets` directory contains all of the assets that will be loaded if you import `WaypointGraph01-Assets.unitypackage` into a Unity project; this includes the sample scene "WaypointGraph01", in `Assets/Scenes/`.
 
