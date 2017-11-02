@@ -1,18 +1,26 @@
-GREY CUBE:  I learned that the universe is going to die a slow, cold death.
+GREY CUBE: They say a dollar a day keeps the doctor away.
 ::
 
-PLAYER:  That's pretty dark.
+PLAYER: Is that true?
 ::
 
-GREY CUBE:  I guess.,,
-My parents beat me every day when I was a kid...,,
-And now my wife beats me every day...
+GREY CUBE: I think it is.,,
+However, I've found that dollars don't taste particularly good.,,
+That's why I only eat cheeseburgers now.
 ::
 
-PLAYER:  That's really dark.
+PLAYER: How's that working out?
 ::
 
-GREY CUBE:  Yeah. And to top it off, the doughnut shop was out of Bavarian cream this morning.
+GREY CUBE: I feel terrible.,, All the time.,,
+But I haven't seen any doctors.
 ::
 
-PLAYER:  You poor soul...
+PLAYER: Is it possible that you just haven't gone to see any? Doctors don't hunt their patients down, you know?
+::
+
+GREY CUBE: ...,,....,,
+I need help, don't I?
+::
+
+PLAYER: Yes. Yes you do.
