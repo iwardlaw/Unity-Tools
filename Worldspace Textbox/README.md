@@ -10,7 +10,7 @@ As with the other Unity tools I've posted here, the `Assets` directory contains 
 
 This scene contains three NPCs with slightly different sorts of interactions. One repeats the same dialogue every time you talk to it. Another only says its line once and then does not speak thereafter. The last one utters one line once and then will repeat a second line every time you talk to it again. (There is also a fourth, deactivated NPC for testing scrolling functionality, but I haven't quite gotten that working yet.)
 
-**_Screenshot Placeholder_**
+![Worldspace textbox demonstration. Player is speaking to a grey cube, which says "Nice day, huh?"](Images/WorldspaceTextbox-01.jpg)
 
 * * *
 
