@@ -37,3 +37,23 @@ You can now implement a set path using the correspondingly named public array of
 Also, a link is now occupied when someone is on it. There should be no collisions/clipping unless two traversing objects are on two different but very close paths. It is possible to create a deadlock with the wrong combination of termini (nodes with only one link) and set paths; nevertheless, a random traverser (one without a set path) is set to time out after waiting for a link for 3 seconds and pick another one. The wait timeout is configurable as a public member in `GraphTraverse`. You can set the `Uses Occupied Links` flag in `GraphTraverse` if you want the object to ignore other objects on the graph.
 
 Finally, while moving across a link, position is determined by how far an object has traveled on that link instead of how much time it has spent on it. In most cases, this won't matter, but it allows you to stop an object mid-link (with `Halt()`; use `PermitToMove()` to start it moving again; you can also manipulate the `stopped` member directly); this may help to avoid collisions if, say, the traverser is surrounded by a proximity trigger. Note that a side effect of this is that dynamically expanding or contracting the length of the link affects the object's movement speed, as length is calculated in `Start()`. So if you need to change the position of a `Waypoint`, be sure to call `RecalculateLength()` on every link attached to it.
+
+* * *
+
+#### UPDATE 17 Nov 2017 ####
+
+For an object with the `TraverseGraph` script attached, if you have defined an end point—either through the `End Point` field or by populating `Set Path`—then you can set one of three actions that will occur when the object reaches that end point.
+
+![GraphTraverse inspector view. End Action is highlighted.](Images/EndActionInspector.jpg)
+
+- `Release` releases the object from the graph such that it no longer occupies any waypoints or links. Without any further instruction, however, it will remain where it is, meaning that other objects on the graph can now run into it. You should therefore define some behavior to take over when the object is released.
+- `Hold` hods the object at the final waypoint. It sill occupies this point and will perform its idle animation and sound.
+- `Destroy` destroys the object via `GameObject.Destroy()`. You can set a delay using the `Destroy Delay` to make it remain for a while after it reaches its end point. Note that the object behaves as though it's been released from the graph before being destroyed.
+
+Related to this feature is the `Current Traversals` field.
+
+![GraphTraverse inspector view. Current Traversals is highlighted.](Images/CurrentTraversalsInspector.jpg)
+
+This field only applies if `Set Path` has been populated. It represents the number of times the object traverses the path (reaches the final point) before the end point becomes active. If it is 0 or less, the path repeats indefinitely. If `End Point` is not set, is the same as the final point in `Set Path`, or is a point that does not exist in `Set Path`, then the end point is the final point in `Set Path`; in this case, the path ends immediately when the object completes the specified number of traversals. If `End Point` is a point in `Set Path` other than the final point, then the path ends at that point _after_ the specified number of full traversals.
+
+For example, in the image above, `Current Traversals` is 2. If `End Point` is not set, is set to `Waypoint5`, or is set to a point not in `Set Path`, then the path ends the second time the object arrives at `Waypoint5`. If, however, `End Point` is set to any of the points in `Set Points` other than `Waypoint5`, then the path ends after the object has made two complete traversals and then reaches `End Point`.
