@@ -15,13 +15,25 @@ using System.Collections.Generic;
 [RequireComponent(typeof(GraphGizmo))]
 public class WaypointGraph : MonoBehaviour {
 
+  #region Enums
+
+  public enum EndAction { Release, Hold, Destroy };
+
+  #endregion Enums
+
+
   #region Members
 
   RAList<Pair<Waypoint, RAList<WaypointLink>>> _pointMap;
   public RAList<Pair<Waypoint, RAList<WaypointLink>>> pointMap { get { return _pointMap; } }
   public Waypoint startPoint, endPoint;
+  public Waypoint[] setPath;
+  public int setPathTraversals;
+  public EndAction endAction;
+  public float destroyDelay;
   public int startIndex { get { return GetIndex(startPoint); } }
   public int endIndex { get { return GetIndex(endPoint); } }
+  [HideInInspector]
   public List<Waypoint> pointsInUse;
 
   #endregion Members

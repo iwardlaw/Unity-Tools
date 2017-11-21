@@ -42,7 +42,7 @@ Finally, while moving across a link, position is determined by how far an object
 
 #### UPDATE 17 Nov 2017 ####
 
-For an object with the `TraverseGraph` script attached, if you have defined an end point容ither through the `End Point` field or by populating `Set Path`葉hen you can set one of three actions that will occur when the object reaches that end point.
+For an object with the `TraverseGraph` script attached, if you have defined an end point容ither through the `End Point` field or by populating `Set Path`葉hen you can set one of three actions that will occur when the object reaches that end point. You can also use the path of the attached `Graph` if you have not chosen to override it with `Override Graph Path`.
 
 ![GraphTraverse inspector view. End Action is highlighted.](Images/EndActionInspector.jpg)
 
@@ -50,10 +50,10 @@ For an object with the `TraverseGraph` script attached, if you have defined an e
 - `Hold` hods the object at the final waypoint. It sill occupies this point and will perform its idle animation and sound.
 - `Destroy` destroys the object via `GameObject.Destroy()`. You can set a delay using the `Destroy Delay` to make it remain for a while after it reaches its end point. Note that the object behaves as though it's been released from the graph before being destroyed.
 
-Related to this feature is the `Current Traversals` field.
+Related to this feature is the `Set Path Traversals` field.
 
-![GraphTraverse inspector view. Current Traversals is highlighted.](Images/CurrentTraversalsInspector.jpg)
+![GraphTraverse inspector view. Set Path Traversals is highlighted.](Images/SetPathTraversalsInspector.jpg)
 
-This field only applies if `Set Path` has been populated. It represents the number of times the object traverses the path (reaches the final point) before the end point becomes active. If it is 0 or less, the path repeats indefinitely. If `End Point` is not set, is the same as the final point in `Set Path`, or is a point that does not exist in `Set Path`, then the end point is the final point in `Set Path`; in this case, the path ends immediately when the object completes the specified number of traversals. If `End Point` is a point in `Set Path` other than the final point, then the path ends at that point _after_ the specified number of full traversals.
+This field only applies if `Set Path` has been populated. It represents the number of times the object traverses the path (reaches the final point) before the end point becomes active. If it is less than 0, the path repeats indefinitely. If `End Point` is not set, is the same as the final point in `Set Path`, or is a point that does not exist in `Set Path`, then the end point is the final point in `Set Path`; in this case, the path ends immediately when the object completes the specified number of traversals. If `End Point` is a point in `Set Path` other than the final point, then the path ends at that point _after_ the specified number of full traversals.
 
 For example, in the image above, `Current Traversals` is 2. If `End Point` is not set, is set to `Waypoint5`, or is set to a point not in `Set Path`, then the path ends the second time the object arrives at `Waypoint5`. If, however, `End Point` is set to any of the points in `Set Points` other than `Waypoint5`, then the path ends after the object has made two complete traversals and then reaches `End Point`.
