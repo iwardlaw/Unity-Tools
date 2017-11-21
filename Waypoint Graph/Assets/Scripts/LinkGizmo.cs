@@ -28,8 +28,8 @@ public class LinkGizmo : AbstractGizmo {
   {
     WaypointLink wl = GetComponent<WaypointLink>();
     if(previouslySelected) {
-      wl.fromPoint.GetComponent<GraphGizmo>().unlockColorOverride();
-      wl.toPoint.GetComponent<GraphGizmo>().unlockColorOverride();
+      wl.fromPoint.GetComponent<GraphGizmo>().dequeueColorOverride();
+      wl.toPoint.GetComponent<GraphGizmo>().dequeueColorOverride();
       previouslySelected = false;
     }
 
@@ -41,12 +41,12 @@ public class LinkGizmo : AbstractGizmo {
   {
     WaypointLink wl = GetComponent<WaypointLink>();
     if(wl.directed) {
-      wl.fromPoint.GetComponent<GraphGizmo>().lockColorOverride(GraphGizmo.ColorOverrideType.IsFromPoint);
-      wl.toPoint.GetComponent<GraphGizmo>().lockColorOverride(GraphGizmo.ColorOverrideType.IsToPoint);
+      wl.fromPoint.GetComponent<GraphGizmo>().enqueueColorOverride(ColorOverrideType.IsFromPoint);
+      wl.toPoint.GetComponent<GraphGizmo>().enqueueColorOverride(ColorOverrideType.IsToPoint);
     }
     else {
-      wl.fromPoint.GetComponent<GraphGizmo>().lockColorOverride(GraphGizmo.ColorOverrideType.UndirLinkSelected);
-      wl.toPoint.GetComponent<GraphGizmo>().lockColorOverride(GraphGizmo.ColorOverrideType.UndirLinkSelected);
+      wl.fromPoint.GetComponent<GraphGizmo>().enqueueColorOverride(ColorOverrideType.UndirLinkSelected);
+      wl.toPoint.GetComponent<GraphGizmo>().enqueueColorOverride(ColorOverrideType.UndirLinkSelected);
     }
 
     Gizmos.color = selectedColor;

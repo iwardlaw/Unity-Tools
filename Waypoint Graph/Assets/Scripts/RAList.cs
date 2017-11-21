@@ -35,7 +35,14 @@ public class RAList<T> : System.IEquatable<RAList<T>> where T : System.IEquatabl
   public int size { get { return _size; } }
   public int length { get { return _size; } }
   public int capacity { get { return _capacity; } }
-  public T front { get { return _size > 0 ? _items[0] : default(T); } }
+  public T front {
+    get
+    {
+      if(_size > 0)
+        return _items[0];
+      throw new System.InvalidOperationException();
+    }
+  }
   public T back { get { return _size > 0 ? _items[_size - 1] : default(T); } }
   public T this[int index] { get { return _items[index]; } set { _items[index] = value; } }
 

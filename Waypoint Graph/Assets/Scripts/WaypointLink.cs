@@ -21,7 +21,8 @@ public class WaypointLink : MonoBehaviour, System.IEquatable<WaypointLink> {
   public bool directed = false;
   [SerializeField] float _moveSpeedMultiplier = 1f;
   public float moveSpeedMultiplier { get { return _moveSpeedMultiplier; } set { _moveSpeedMultiplier = value; _movementFactor = value / _length; } }
-  public float toleranceWidth = 0f;
+  // Not yet implemented, though it may be at a later time:
+  //public float toleranceWidth = 0f;
   int _occupantCount = 0;
   public int occupantCount { get { return _occupantCount; } }
   float _length;

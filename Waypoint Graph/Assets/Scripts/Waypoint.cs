@@ -33,10 +33,12 @@ public class Waypoint : MonoBehaviour, System.IEquatable<Waypoint> {
   public float toleranceRadius = 0f;
   public float minIdleTime = 0f;
   public float maxIdleTime = 10f;
-  public bool wanderWhileIdle = false;
-  public float rotationSpeed = 5f;
-  public Action actionOnArrival;
-  public Animation[] idleAnimations;
+
+  // These members are not yet implemented but may be at a later time.
+//  public bool wanderWhileIdle = false;
+//  public float rotationSpeed = 5f;
+//  public Action actionOnArrival;
+//  public Animation[] idleAnimations;
 
   #endregion Members
 
@@ -48,10 +50,10 @@ public class Waypoint : MonoBehaviour, System.IEquatable<Waypoint> {
     toleranceRadius = other.toleranceRadius;
     minIdleTime = other.minIdleTime;
     maxIdleTime = other.maxIdleTime;
-    wanderWhileIdle = other.wanderWhileIdle;
-    rotationSpeed = other.rotationSpeed;
-    actionOnArrival = other.actionOnArrival;
-    idleAnimations = other.idleAnimations;
+//    wanderWhileIdle = other.wanderWhileIdle;
+//    rotationSpeed = other.rotationSpeed;
+//    actionOnArrival = other.actionOnArrival;
+//    idleAnimations = other.idleAnimations;
   }
 
   public bool Equals(Waypoint other) { if((object)other == null) return false;  return GetInstanceID() == other.GetInstanceID(); }

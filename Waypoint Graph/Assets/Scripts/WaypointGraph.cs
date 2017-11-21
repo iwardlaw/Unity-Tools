@@ -12,7 +12,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(GraphGizmo))]
 public class WaypointGraph : MonoBehaviour {
 
   #region Enums

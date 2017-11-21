@@ -15,13 +15,6 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Waypoint))]
 public class GraphGizmo : AbstractGizmo {
 
-  #region Enums
-
-  public enum ColorOverrideType { None, IsFromPoint, IsToPoint, UndirLinkSelected };
-
-  #endregion Enums
-  
-
   #region Members
 
   public Color waypointFromColor = Color.red, waypointToColor = Color.green;
@@ -65,12 +58,12 @@ public class GraphGizmo : AbstractGizmo {
 
   #region Public Methods
 
-  public void lockColorOverride(ColorOverrideType cot)
+  public void enqueueColorOverride(ColorOverrideType cot)
   {
     _cotQueue.Add(cot);
   }
 
-  public void unlockColorOverride()
+  public void dequeueColorOverride()
   {
     if(_cotQueue.Count != 0)
       _cotQueue.RemoveAt(0);

@@ -13,6 +13,12 @@ using UnityEngine;
 
 abstract public class AbstractGizmo : MonoBehaviour {
 
+  #region Enums
+
+  public enum ColorOverrideType { None, IsFromPoint, IsToPoint, UndirLinkSelected };
+
+  #endregion Enums
+
   #region Members
 
   Color _defaultGizmoColor = Color.white, _defaultSelectedColor = Color.blue, _defaultInactiveColor = Color.grey;
